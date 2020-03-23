@@ -1,0 +1,21 @@
+interface NamedEntity {
+  id: ID!
+  name: String!
+}
+
+type EditableStatement {
+	id: ID!
+	field:  String!
+	statement: String!
+	editor: String!
+	edit_date: String!
+	deleted: Boolean!
+}
+
+type CompoundStatement implements NamedEntity {
+  	id: ID!
+  	name: String!
+	fact1: EditableStatement!
+	fact2: EditableStatement!
+}
+
